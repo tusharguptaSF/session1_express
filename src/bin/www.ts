@@ -1,4 +1,4 @@
-const app = require('../index.ts');
+import app from '../index';
 const PORT = 8001;
 
 const server = app.listen(PORT);

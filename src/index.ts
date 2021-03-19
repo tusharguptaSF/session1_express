@@ -1,7 +1,7 @@
-const express = require('express');
-const bodyparser = require('body-parser');
-const path = require('path');
-const api = require('/api');
+import express from 'express';
+import bodyparser from 'body-parser';
+import path from 'path';
+import router from './api';
 const app = express();
 app.use('/home',express.static(path.join(__dirname,'public')));
 
@@ -29,11 +29,11 @@ app.use((req,res,next) => {
        next(401);
     }
 })
-//localhost:8001/api/users
-app.use('/api',api);
+// localhost:8001/api/users
+app.use('/api',router);
 
 
 // Exporting the app
-module.exports = app;
+export default app;
 
 
